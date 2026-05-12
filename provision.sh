@@ -3,7 +3,7 @@
 echo "Instalação e execução do setup"
 
 apt update
-apt install -y git apache2
+apt install -y git
 
 # Baixa o repositório do OAI em local definido
 cd /home/vagrant
@@ -17,11 +17,4 @@ fi
 
 chown -R vagrant:vagrant /home/vagrant/oai
 
-mkdir -p /var/www/html
-cp -r /vagrant/html/. /var/www/html/
 
-systemctl enable apache2
-systemctl start apache2
-
-ufw allow 'Apache'
-ufw reload || true
